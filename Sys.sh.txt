@@ -1,0 +1,55 @@
+#! /bin/sh
+clear
+echo "**********************************"
+echo "*bienvenue dans mon programme sys*"
+echo "**********************************"
+echo "..............................................................................................................."
+echo "********************"
+echo "*choisir une option*"
+echo "********************"
+echo
+
+echo " 1 voir la liste des utilisateurs enregistrer il y a 3 jours "
+echo " 2 acquisition installation et demarage de xampp "
+echo " 3 archivage des elements personnel de lutilisateur qui int ete modifie par sudoers il y a 3 jours "
+echo " 4 information sur lutilisation du disque, la memoire, le processeur, la swap "
+echo " 12 quitter "
+read op
+case $op in
+
+1) lastlog -b 3;;
+
+2)echo " choisir une option "
+  echo
+echo " 9 acquisition de xamp "
+echo " 10 instalation de xampp "
+echo " 11 lancement de xampp "
+read is
+case $is in
+
+9) wget wwww.apachfriends.org/xampp-files/5.6.30/xampp-linux-x64-5.6.30-1-installes.run;;
+10)sudo chmod +x xampp-linux-x64-5.6.30-1-intaller.run
+   sudo ./xampp-linux-x64-5.60.30-1-intaller.run;;
+11) ./opt/lampp/lampp start;;
+
+3) echo " entrez ";;
+
+4) echo " choisir une option "
+   echo
+
+echo " 5 utilisation disque "
+echo " 6 utilisation memoire vive "
+echo " 7 utilisation processeur "
+echo " 8 utilisation swap "
+read ip
+case $ip in
+5) df;;
+6) free -m ;;
+7) ps -A;;
+8) free;;
+
+12) exit
+
+esac
+esac
+esac
